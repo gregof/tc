@@ -1,0 +1,5 @@
+//in commands
+[
+    'test'
+]
+//out
