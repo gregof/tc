@@ -1,7 +1,7 @@
 test:
-	node ../bin/stcr case
-	node ../bin/stcr case.exec
-	node ../bin/stcr case.before-after
-	node ../bin/stcr case.commands
+	node ../bin/tc case
+	node ../bin/tc case.exec
+	node ../bin/tc case.before-after
+	node ../bin/tc case.commands
 
 .PHONY : test

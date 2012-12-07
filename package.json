@@ -1,5 +1,5 @@
 {
-  "name": "stcr",
+  "name": "tc",
   "author": {
     "name": "Golubev Fedor",
     "email": "gregof@yandex.ru",
@@ -17,7 +17,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/gregof/stcr.git"
+    "url": "git://github.com/gregof/tc.git"
   },
-  "main": "./lib/run.test.js"
+  "main": "./lib/tc.js",
+  "bin": {
+    "tc": "./bin/tc"
+  }
+
 }
