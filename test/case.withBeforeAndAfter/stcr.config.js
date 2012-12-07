@@ -1,8 +1,0 @@
-{
-    beforeEach: function () {
-
-    },
-    afterEach: function () {
-
-    }
-}
