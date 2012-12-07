@@ -1,4 +1,5 @@
 test:
-	node ../bin/stcr case.code
+	node ../bin/stcr case
+	node ../bin/stcr case.exec
 
 .PHONY : test
