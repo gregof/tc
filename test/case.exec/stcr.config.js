@@ -1,5 +1,6 @@
 {
-    exec: function (inText, out) {
+    exec: function (inText, out, callback) {
         out('\'' + inText + '\'');
+        callback();
     }
 }

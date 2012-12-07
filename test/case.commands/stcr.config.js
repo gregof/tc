@@ -1,22 +1,37 @@
-{
-    defaultCommand: function (command, in, out, callback) {
-        require('child_process').exec(command, function (err, stdout, stderr) {
-            if (err) {
-                console.log('ERROR:', err);
-            } else {
-                callback();
-            }
-        });
-    },
-    commands: {
-        test: function (out, callback) {
-            out(42);
-        }
-    },
-    beforeEach: function () {
+(function () {
 
-    },
-    afterEach: function () {
+    function exec (inText, out, callback) {
+        var commands;
+        eval('commands=' + inText);
+
+        require('abc').async.sequence(
+            commands,
+            function (command, callback) {
+                execCommand(command, out, callback);
+            },
+            callback
+        );
 
     }
-}
+
+    function execCommand (command, out, callback) {
+        switch (command) {
+            case 'test':
+                out(42);
+                callback();
+                break;
+            case 'towel':
+                out('yes');
+                callback();
+                break;            
+            default:
+                out('unknown command');
+                callback();
+        } 
+    }
+
+    return {
+        exec: exec
+    };
+
+})();
