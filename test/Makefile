@@ -4,5 +4,6 @@ test:
 	node ../bin/tc case.before-after
 	node ../bin/tc case.commands
 	node ../bin/tc case.async
+	node ../bin/tc case.require
 
 .PHONY : test

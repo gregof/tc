@@ -1,7 +1,7 @@
 //in
 setTimeout(function () {
-    out('test');
-    finish();
+    tc.out('test');
+    tc.finish();
 }, 200);
 //out
 test

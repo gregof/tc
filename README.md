@@ -21,8 +21,8 @@ expected result
 For example:
 ```javascript
 //in
-out(2 + 2);
-out(2 * 2);
+tc.out(2 + 2);
+tc.out(2 * 2);
 //out
 4
 4
@@ -31,7 +31,7 @@ Function 'out' accumulates results. Each call create new line.
 
 Run testCases from command line:
 ```
-tc caseDir
+node tc/bin/tc caseDir
 ```
 or from js:
 ```javascript
@@ -40,15 +40,15 @@ require('ts').run(caseDir);
 
 ### Config file - tc.config.js
 Config file should be returned object with next fields:
-  * exec(inText, out, collback) - function executed testCase. 'inText' is text form case between '//in' and //out. 'out' is function accumulates results. 'collback' should be called for finish test.
+  * exec(inText, tc, callback) - function executed testCase. 'inText' is text form case between '//in' and //out. 'tc' is testCase. 'tc.out' - method accumulates results. 'tc.fixPath' - fixed path from caseFile to process relative. 'callback' should be called for finish test.
   * [beforeEach] - function called before each testCase
   * [afterEach] - function called after each testCase
 
 For example:
 ```javascript
 {
-    exec: function (inText, out, callback) {
-        out('\'' + inText + '\'');
+    exec: function (inText, tc, callback) {
+        tc.out('\'' + inText + '\'');
         callback();
     }
 }

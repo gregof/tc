@@ -1,31 +1,31 @@
 (function () {
 
-    function exec (inText, out, callback) {
+    function exec (inText, tc, callback) {
         var commands;
         eval('commands=' + inText);
 
         require('abc').async.sequence(
             commands,
             function (command, callback) {
-                execCommand(command, out, callback);
+                execCommand(command, tc, callback);
             },
             callback
         );
 
     }
 
-    function execCommand (command, out, callback) {
+    function execCommand (command, tc, callback) {
         switch (command) {
             case 'test':
-                out(42);
+                tc.out(42);
                 callback();
                 break;
             case 'towel':
-                out('yes');
+                tc.out('yes');
                 callback();
                 break;            
             default:
-                out('unknown command');
+                tc.out('unknown command');
                 callback();
         } 
     }
