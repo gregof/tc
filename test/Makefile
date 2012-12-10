@@ -3,5 +3,6 @@ test:
 	node ../bin/tc case.exec
 	node ../bin/tc case.before-after
 	node ../bin/tc case.commands
+	node ../bin/tc case.async
 
 .PHONY : test
