@@ -1,14 +1,14 @@
 (function () {
     var testCase = {};
     return {
-        beforeEach: function () {
-            if (testCase && testCase != this) {
-                testCase = this;
-                this.OK = true;
+        beforeEach: function (tc) {
+            if (testCase && testCase != tc) {
+                testCase = tc;
+                tc.OK = true;
             }
         },
-        afterEach: function () {
-            if (testCase != this) {
+        afterEach: function (tc) {
+            if (testCase != tc) {
                 testCase = null;
             }
         }
