@@ -53,6 +53,12 @@ For example:
     }
 }
 ```
+'exec' can be name of predefined executer. 
+```javascript
+{
+    exec: 'async'
+}
+```
 
 ### Example
-See examples in test directory.
+See more examples in test directory.
