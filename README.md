@@ -59,6 +59,19 @@ For example:
     exec: 'async'
 }
 ```
+'exec' can send Error object to callback.
+```javascript
+{
+    exec: function (inText, tc, callback) {
+        // do something
+        if (smfWrong) {
+            callback(new Error('Something wrong!'))
+        } else {
+            callback();
+        }
+    }
+}
+```
 
 ### Example
 See more examples in test directory.
