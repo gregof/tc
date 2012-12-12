@@ -27,9 +27,9 @@ tc.out(2 * 2);
 4
 4
 ```
-Function 'out' accumulates results. Each call create new line.
+Method 'tc.out' accumulates results. Each call create new line.
 
-Run testCases from command line:
+You can run testCases from command line:
 ```
 node tc/bin/tc caseDir
 ```
@@ -39,10 +39,15 @@ require('ts').run(caseDir);
 ```
 
 ### Config file - tc.conf.js
-Config file should be returned object with next fields:
-  * exec(inText, tc, callback) - function executed testCase. 'inText' is text form case between '//in' and //out. 'tc' is testCase. 'tc.out' - method accumulates results. 'tc.fixPath' - fixed path from caseFile to process relative. 'callback' should be called for finish test.
-  * [beforeEach] - function called before each testCase
-  * [afterEach] - function called after each testCase
+Config file should return object with next fields:
+  * exec(inText, tc, callback) - function for testCase execution. 
+    * 'inText' - text form testCase between '//in' and //out. 
+    * 'tc' - testCase object. 
+      * 'tc.out' - this method accumulates results. 
+      * 'tc.fixPath' - can be used for relative path resolving.
+    * 'callback' should be called for test finishing.
+  * [beforeEach] - function will be called before each testCase.
+  * [afterEach] - function will be called after each testCase.
 
 For example:
 ```javascript
