@@ -64,12 +64,6 @@ For example:
     exec: 'async'
 }
 ```
-'exec' can be defined in another file. You should use 'conf.fixPath' for resolve relative path.
-```javascript
-{
-    exec: require(conf.fixPath(./module.js)).exec
-}
-```
 'exec' can send Error object to callback.
 ```javascript
 {
@@ -81,6 +75,12 @@ For example:
             callback();
         }
     }
+}
+```
+You can use code from another files. You should use 'conf.fixPath' for resolve relative path.
+```javascript
+{
+    exec: require(conf.fixPath(./module.js)).exec
 }
 ```
 
