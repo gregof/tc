@@ -1,8 +1,8 @@
 ## tc
 Test case runner.
 
-### Test cases files
-Create directory with testCases. Each file with testCase must contains '.case.' in name. 
+### Test case files
+Create the directory with testCases. Each file with testCase must contains '.case.' in the name. 
 ```
 caseDir/
   tc.conf.js //optional
@@ -27,7 +27,7 @@ tc.out(2 * 2);
 4
 4
 ```
-Method 'tc.out' accumulates results. Each call create new line.
+Method 'tc.out' accumulates results. Each call create the new line.
 
 You can run testCases from command line:
 ```
@@ -39,13 +39,13 @@ require('ts').run(caseDir);
 ```
 
 ### Config file - tc.conf.js
-Config file should return object with next fields:
+Config file should return the object with next fields:
   * exec(inText, tc, callback) - function for testCase execution. 
-    * 'inText' - text form testCase between '//in' and //out. 
+    * 'inText' - text from testCase between '//in' and '//out'. 
     * 'tc' - testCase object. 
       * 'tc.out' - this method accumulates results. 
-      * 'tc.fixPath' - can be used for relative path resolving.
-    * 'callback' should be called for test finishing.
+      * 'tc.fixPath' - can be used for resolving of relative path.
+    * 'callback' - must be called for finish of test.
   * [beforeEach] - function will be called before each testCase.
   * [afterEach] - function will be called after each testCase.
 
@@ -58,7 +58,7 @@ For example:
     }
 }
 ```
-'exec' can be name of predefined executer. 
+'exec' can be the name of predefined executer. 
 ```javascript
 {
     exec: 'async'
@@ -77,7 +77,7 @@ For example:
     }
 }
 ```
-You can use code from another files. You should use 'conf.fixPath' for resolve relative path.
+You can use code from another files. You should use 'conf.fixPath' for resolving of relative path.
 ```javascript
 {
     exec: require(conf.fixPath(./module.js)).exec
@@ -85,4 +85,4 @@ You can use code from another files. You should use 'conf.fixPath' for resolve r
 ```
 
 ### Example
-See more examples in test directory.
+See more examples in the test directory.
