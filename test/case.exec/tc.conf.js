@@ -1,6 +1,3 @@
 {
-    exec: function (inText, tc, callback) {
-        tc.out('\'' + inText + '\'');
-        callback();
-    }
+    exec: require(conf.fixPath('./module.js')).exec
 }
