@@ -5,7 +5,7 @@ Test case runner.
 Create directory with testCases. Each file with testCase must contains '.case.' in name. 
 ```
 caseDir/
-  tc.config.js //optional
+  tc.conf.js //optional
   A.case.js
   B.case.js
 ```
@@ -38,7 +38,7 @@ or from js:
 require('ts').run(caseDir);
 ```
 
-### Config file - tc.config.js
+### Config file - tc.conf.js
 Config file should be returned object with next fields:
   * exec(inText, tc, callback) - function executed testCase. 'inText' is text form case between '//in' and //out. 'tc' is testCase. 'tc.out' - method accumulates results. 'tc.fixPath' - fixed path from caseFile to process relative. 'callback' should be called for finish test.
   * [beforeEach] - function called before each testCase
