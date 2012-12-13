@@ -46,8 +46,16 @@ Config file should return the object with next fields:
       * 'tc.out' - this method accumulates results. 
       * 'tc.fixPath' - can be used for resolving of relative path.
     * 'callback' - must be called for finish of test.
-  * [beforeEach] - function will be called before each testCase.
-  * [afterEach] - function will be called after each testCase.
+  * [beforeEach(tc, callback)] - function will be called before each testCase.
+    * 'tc' - testCase object. 
+      * 'tc.out' - this method accumulates results. 
+      * 'tc.fixPath' - can be used for resolving of relative path.
+    * 'callback' - callback.
+  * [afterEach(tc, callback)] - function will be called after each testCase.
+    * 'tc' - testCase object. 
+      * 'tc.out' - this method accumulates results. 
+      * 'tc.fixPath' - can be used for resolving of relative path.
+    * 'callback' - callback.
 
 For example:
 ```javascript
