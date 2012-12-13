@@ -27,7 +27,7 @@ tc.out(2 * 2);
 4
 4
 ```
-Method 'tc.out' accumulates results. Each call create the new line.
+Method 'tc.out' accumulates results. Each call creates the new line.
 
 You can run testCases from command line:
 ```
